@@ -12,7 +12,6 @@ from datetime import datetime
 import time
 import configparser
 import matplotlib
-import websocket
 
 config = configparser.ConfigParser()
 config.read('config.ini')
