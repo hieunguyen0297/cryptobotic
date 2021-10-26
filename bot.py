@@ -1,6 +1,8 @@
 # Press F1 -> type run -> find run Python file -> set ketbinding
 # Press Shift + R to run the file
 # Navigate to the folder that contain the python file type python + file.py
+# This version currently does not support for trading in real time market
+# It only work with JavaScript version
 
 import pandas as pd
 import mplfinance as mpf
@@ -17,12 +19,17 @@ config.read('config.ini')
 
 exchange_id = 'binanceus'
 exchange_class = getattr(ccxt, exchange_id)
+
+# Use 1 for your trading preferences, use 2 for analytic
+
+# 1
 # binance = exchange_class({
 #     'apiKey': YOUR_API_KEY,
 #     'secret': YOUR_SECRET_KEY,
     
 # })
 
+# 2
 binance = ccxt.binance()
   
 
@@ -105,7 +112,7 @@ def show_chart():
 
 
 def main():
-    # show interactive chart here   
+    # show interactive chart here before enter the trade  
     show_chart()  
     # The bot continue until stop
     while True:
